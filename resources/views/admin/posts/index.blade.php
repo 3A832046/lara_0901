@@ -20,7 +20,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col" style="text-align: left">標題</th>
-            <th scope="col" style="text-align: right">精選？</th>
+            <th scope="col" style="text-align: right">精選?</th>
             <th scope="col">功能</th>
         </tr>
         </thead>
@@ -31,9 +31,9 @@
                 <td>{{$post->title}}</td>
                 <td style="text-align: right">{{($post->is_feature)? 'v' : 'x'}}</td>
                 <td>
-                    <a href="{{route('admin.posts.edit', $post->id)}}">編輯</a>
-                    /
-                    <a href="#">刪除</a>
+                    <a class="btn btn-sm btn-primary" href="{{route('admin.posts.edit',$post->id)}}">編輯</a>
+                    <a class="btn btn-sm btn-danger" href="#">刪除</a>
+                </td>
             </tr>
         @endforeach
         </tbody>
