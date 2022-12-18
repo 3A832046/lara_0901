@@ -9,10 +9,16 @@
         <li class="breadcrumb-item active">新增文章</li>
     </ol>
     <div class="alert alert-danger alert-dismissible" role="alert" id="liveAlert">
-        <strong>錯誤！</strong> 請修正以下問題：
-        <ul>
-            <li>錯誤 1</li>
-        </ul>
+        <!--顯示表單錯誤程式碼-->
+        @if(count($errors)>0)
+            <strong>哎呀！出了些問題！</strong>
+            <br>
+            <ul>
+                @foreach($errors->all() as $errors)
+                    <li>{{$errors}}</li>
+                @endforeach
+            </ul>
+        @endif
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <form action="{{route('admin.posts.store')}}" method="POST" role="form">
