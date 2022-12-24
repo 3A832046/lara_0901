@@ -10,15 +10,7 @@
     </ol>
     <div class="alert alert-danger alert-dismissible" role="alert" id="liveAlert">
         <!--顯示表單錯誤程式碼-->
-        @if(count($errors)>0)
-            <strong>哎呀！出了些問題！</strong>
-            <br>
-            <ul>
-                @foreach($errors->all() as $errors)
-                    <li>{{$errors}}</li>
-                @endforeach
-            </ul>
-        @endif
+        @include('admin.layouts.shared.errors')
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     <form action="{{route('admin.posts.update', $post->id)}}" method="POST" role="form">
